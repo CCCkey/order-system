@@ -7,9 +7,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 订单信息
     order: null,
+    // 订单餐品信息
     meals: null,
+    // 订单地址信息
     delivery: null,
+    // 订单支付信息
     pay: null
   },
 
@@ -17,14 +21,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 发送请求，获取订单、餐品、地址、支付等信息
     wx.request({
       url: app.globalData.b_url + '/orders/users/' + options.orderId,
       method: 'GET',
       data: {
+        // 从本地存储中获取密匙
         api_token: wx.getStorageSync('api_token')
       },
       success: result => {
-        console.log(result);
+        // 若请求成功，则更新 data 中的订单、餐品、地址、支付等信息
         if(result.data.code === 200){
           this.setData({
             order: result.data.order,
@@ -35,54 +41,6 @@ Page({
         }
       }
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
   }
+
 })

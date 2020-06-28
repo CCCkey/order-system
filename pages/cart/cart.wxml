@@ -1,11 +1,14 @@
 <!--pages/cart/cart.wxml-->
 <view class="container">
+  <!-- 购物车详情面板 -->
   <view class="page__bd">
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd right">
+        <!-- 遍历购物车数据 -->
         <view wx:for="{{cart}}">
           <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
             <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <!-- 若不存在餐品图片，则显示默认图片 -->
               <image class="weui-media-box__thumb" wx:if="{{item.img != null}}" src="{{item.img}}" />
               <image class="weui-media-box__thumb" wx:else src="/images/no_image.png" />
             </view>
@@ -13,6 +16,7 @@
               <view class="weui-media-box__desc">
                 <text style="color: black">{{item.name}}</text>
                 <text class="price">￥{{item.price * item.amount}}</text>
+                <!-- 绑定 doCart 方法，传递参数餐品 id 和操作数量 -->
                 <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{-1}}">-</text>
                 <text style="color: black">{{item.amount}}</text>
                 <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{1}}">+</text>
@@ -23,12 +27,14 @@
       </view>
     </view>
   </view>
+  <!-- 生成订单项 -->
   <view class="addOrder">
     <text class="price_order">总金额：￥{{total_price}}</text>
+    <!-- 若总金额为 0，结算按钮禁止跳转到生成订单页 -->
     <block wx:if="{{total_price == 0}}">
       <text class="btn_order" hover-class="navigator-hover">结算</text>
     </block>
-    <block wx:if="{{total_price != 0}}">
+    <block wx:else>
       <navigator class="btn_order" url="/pages/addOrder/addOrder?total_price={{total_price}}" hover-class="navigator-hover">结算</navigator>
     </block>
   </view>

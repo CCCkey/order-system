@@ -1,12 +1,11 @@
 //app.js
 App({
   onLaunch: function () {
-    // 登录
+    // 调用接口获取登录凭证
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
         if (res.code) {
-          //发起网络请求
+          // 发送 res.code 到后台换取 openId, sessionKey，加密后得到 api_token
           wx.request({
             url: this.globalData.b_url + '/users',
             method: 'POST',
@@ -14,6 +13,7 @@ App({
               code: res.code
             },
             success: result => {
+              // 将 api_token 添加到本地存储中
               wx.setStorageSync('api_token', result.data.api_token)
             }
           })
@@ -24,6 +24,7 @@ App({
     })
   },
   globalData: {
+    // 后端服务器地址
     b_url: 'http://localhost:9090/api/v1'
   }
 })

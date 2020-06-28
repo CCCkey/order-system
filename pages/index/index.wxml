@@ -1,5 +1,6 @@
 <!--pages/index/index.wxml-->
 <view class="container">
+  <!-- 横向滚动条 -->
   <scroll-view class="scroll-view_H" scroll-x="true">
     <view wx:for="{{types}}" style="display: inline-block">
       <text class="scroll-view-item_H" bindtap="clickType" data-typeId="{{item.id}}">{{item.name}}</text>
@@ -8,11 +9,15 @@
       <text class="scroll-view-item_H" bindtap="clickType" data-typeId="{{item.id}}">{{item.name}}</text>
     </view>
   </scroll-view>
+  <!-- 餐品信息面板，使用 weui-panel 组件 -->
   <view class="page__bd">
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd right">
+        <!-- 遍历餐品信息 -->
         <view wx:for="{{meals}}">
+          <!-- 遍历餐品类型id -->
           <view wx:for="{{item.type_id}}" wx:for-index="typeIndex" wx:for-item="typeItem">
+            <!-- 餐品在自身类型下展示 -->
             <block wx:if="{{flag == typeItem}}">
               <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
@@ -26,6 +31,7 @@
                     <text class="price">￥{{item.price}}</text>
                   </view>
                   <view class="weui-media-box__desc" style="text-align: right">
+                    <!-- 餐品添加到购物车，绑定方法 addCart，传递餐品id -->
                     <text class="btn_add" bindtap="addCart" data-mealId="{{item.id}}">+</text>
                   </view>
                 </view>
@@ -37,4 +43,5 @@
     </view>
   </view>
 </view>
+<!-- 底部导航栏，使用 weui-tabbar 组件 -->
 <mp-tabbar style="position:fixed;bottom:0;width:100%;left:0;right:0;" list="{{tabBar.list}}"></mp-tabbar>

@@ -1,22 +1,20 @@
 <!--pages/orderList/orderList.wxml-->
 <view class="container">
-    <view wx:for="{{orderList}}">
-      <view class="order" data-order-id="{{item.order.id}}" bindtap="clickOrder">
-        <text class="order_time">下单时间：{{item.order.order_time}}</text>
-        <view wx:for="{{item.meals}}" wx:for-index="index_meal" wx:for-item="item_meal">
-          <text class="meal">{{item_meal.name}} * {{item_meal.amount}}</text>
-        </view>
-        <view class="pay">
-          <text class="total_price">总金额：{{item.pay.total_price}}</text>
-          <view class="status" wx:if="{{item.pay.status == 0}}">支付状态： 未支付</view>
-          <view class="status" wx:else="{{length == 1}}">支付状态： 已支付</view>
-        </view>
+  <!-- 遍历订单，生成订单列表 -->
+  <view wx:for="{{orderList}}">
+    <!-- 绑定 clickOrder 方法，传递订单 id -->
+    <view class="order" data-order-id="{{item.order.id}}" bindtap="clickOrder">
+      <text class="order_time">下单时间：{{item.order.order_time}}</text>
+      <!-- 遍历餐品数组，输出所有餐品信息 -->
+      <view wx:for="{{item.meals}}" wx:for-index="index_meal" wx:for-item="item_meal">
+        <text class="meal">{{item_meal.name}} * {{item_meal.amount}}</text>
       </view>
-    </view>
-  <view class="weui-panel__ft">
-    <view class="weui-cell weui-cell_access weui-cell_link">
-      <view class="weui-cell__bd">查看更多</view>
-      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+      <view class="pay">
+        <text class="total_price">总金额：{{item.pay.total_price}}</text>
+        <!-- 根据 status 字段，显示不同的支付状态 -->
+        <view class="status" wx:if="{{item.pay.status == 0}}">支付状态： 未支付</view>
+        <view class="status" wx:else>支付状态： 已支付</view>
+      </view>
     </view>
   </view>
 </view>
