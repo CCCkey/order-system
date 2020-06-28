@@ -1,0 +1,39 @@
+/* pages/cart/cart.wxss */
+.price {
+  color: #FF0033;
+}
+.btn_cart {
+  font-size: 60rpx;
+  color: blue;
+}
+.weui-media-box_appmsg {
+  width: 750rpx;
+}
+.weui-media-box__desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.addOrder {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+.price_order {
+  display: inline-block;
+  color: white;
+  width: 550rpx;
+  height: 55rpx;
+  background-color: #333333;
+}
+.btn_order {
+  display: inline-block;
+  text-align: center;
+  width: 200rpx;
+  height: 55rpx;
+  color: white;
+  background-color: #339966;
+}

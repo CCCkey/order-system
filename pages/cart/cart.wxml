@@ -1,0 +1,35 @@
+<!--pages/cart/cart.wxml-->
+<view class="container">
+  <view class="page__bd">
+    <view class="weui-panel weui-panel_access">
+      <view class="weui-panel__bd right">
+        <view wx:for="{{cart}}">
+          <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+            <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+              <image class="weui-media-box__thumb" wx:if="{{item.img != null}}" src="{{item.img}}" />
+              <image class="weui-media-box__thumb" wx:else src="/images/no_image.png" />
+            </view>
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__desc">
+                <text style="color: black">{{item.name}}</text>
+                <text class="price">￥{{item.price * item.amount}}</text>
+                <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{-1}}">-</text>
+                <text style="color: black">{{item.amount}}</text>
+                <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{1}}">+</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="addOrder">
+    <text class="price_order">总金额：￥{{total_price}}</text>
+    <block wx:if="{{total_price == 0}}">
+      <text class="btn_order" hover-class="navigator-hover">结算</text>
+    </block>
+    <block wx:if="{{total_price != 0}}">
+      <navigator class="btn_order" url="/pages/addOrder/addOrder?total_price={{total_price}}" hover-class="navigator-hover">结算</navigator>
+    </block>
+  </view>
+</view>

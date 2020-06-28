@@ -1,0 +1,4 @@
+/* pages/addOrder/addOrder.wxss */
+.page-body {
+  width: 750rpx;
+}

@@ -1,0 +1,22 @@
+/* pages/index/index.wxss */
+.scroll-view_H{
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+.scroll-view-item_H{
+  padding: 10rpx 20rpx;
+  margin-right: 25rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.scroll-view-item_H:active{
+  background-color: #DCDFE6;
+}
+.price {
+  color: #FF0033;
+}
+.btn_add {
+  font-size: 60rpx;
+  color: blue;
+}

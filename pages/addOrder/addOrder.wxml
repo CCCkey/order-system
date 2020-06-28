@@ -1,0 +1,64 @@
+<!--pages/addOrder/addOrder.wxml-->
+<view class="container">
+  <view class="page-body">
+    <form catchsubmit="formSubmit">
+
+      <view class="page-section">
+        <view class="page-section-title">联系人名称</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="contact_name" placeholder="联系人名称" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="page-section-title">手机号</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="mobile_number" placeholder="手机号" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="page-section-title">配送地址</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd" style="margin: 30rpx 0" >
+              <input class="weui-input" name="address" placeholder="配送地址" />
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="page-section page-section-gap">
+        <view class="page-section-title">配送方式</view>
+        <radio-group name="delivery_way">
+          <label><radio value="0" checked="true"/>商家配送</label>
+          <label><radio value="1"/>用户自提</label>
+        </radio-group>
+      </view>
+
+      <view class="page-section page-section-gap">
+        <view class="page-section-title">支付方式</view>
+        <radio-group name="pay_way">
+          <label><radio value="0" checked="true"/>在线支付</label>
+          <label><radio value="1"/>货到付款</label>
+        </radio-group>
+      </view>
+
+      <view>
+        <text>总金额：￥{{total_price}}</text>
+      </view>
+
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">提交订单</button>
+      </view>
+    </form>
+  </view>
+</view>

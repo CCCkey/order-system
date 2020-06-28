@@ -1,0 +1,17 @@
+/* pages/orderList/orderList.wxss */
+.order {
+  width: 750rpx;
+  padding-bottom: 20rpx;
+  margin-top: 20rpx; 
+  border-bottom: 1px solid;
+  border-color: #DCDFE6;
+}
+.order_time {
+
+}
+.meal {
+  
+}
+.pay {
+  color: #FF0033;
+}
