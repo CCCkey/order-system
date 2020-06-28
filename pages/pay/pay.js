@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // 微信支付 API 所需参数
+    // 微信支付 API 所需参数，预付单id
     prepay_id: '',
     // 支付id
     pay_id: 0,
