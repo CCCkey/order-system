@@ -5,7 +5,8 @@
     "pages/orderList/orderList",
     "pages/meal/meal",
     "pages/order/order",
-    "pages/addOrder/addOrder"
+    "pages/addOrder/addOrder",
+    "pages/pay/pay"
   ],
   "window": {
     "backgroundTextStyle": "light",

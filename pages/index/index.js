@@ -96,14 +96,14 @@ Page({
       success: result => {
         if (result.data.code === 200) {
           // 解析类型id
-          for(let item of result.data.meals) {  
+          for(let item of result.data.data.meals) {  
             item.type_id = item.type_id.split(',');
           };
           // 初始化数据
           this.setData({
-            meals: result.data.meals,
-            types: result.data.types,
-            flag: result.data.types[0].id
+            meals: result.data.data.meals,
+            types: result.data.data.types,
+            flag: result.data.data.types[0].id
           })
         }
       }

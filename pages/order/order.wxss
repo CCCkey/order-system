@@ -8,3 +8,6 @@
   border-bottom: 1px solid;
   border-color: #DCDFE6;
 }
+.btn_pay {
+  margin: 20rpx auto;
+}

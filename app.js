@@ -13,8 +13,13 @@ App({
               code: res.code
             },
             success: result => {
-              // 将 api_token 添加到本地存储中
-              wx.setStorageSync('api_token', result.data.api_token)
+              // code === 200 表示登录成功，后将 api_token 添加到本地存储中
+              // code === 304 表示已登录
+              if(result.data.code === 200){
+                wx.setStorageSync('api_token', result.data.data.api_token)
+              }else if(result.data.code === 304){
+                console.log(result.data.message)
+              }
             }
           })
         } else {

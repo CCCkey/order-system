@@ -1,0 +1,4 @@
+/* pages/pay/pay.wxss */
+.page__bd {
+  width: 750rpx;
+}

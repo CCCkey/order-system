@@ -1,0 +1,28 @@
+<!--pages/pay/pay.wxml-->
+<view class="container">
+  <!-- 支付面板 -->
+  <view class="page__bd">
+    <view class="weui-form-preview">
+      <view class="weui-form-preview__hd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">付款金额</view>
+          <view class="weui-form-preview__value_in-hd">￥{{total_price}}</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__bd">
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">订单号</view>
+          <view class="weui-form-preview__value">{{order_num}}</view>
+        </view>
+        <view class="weui-form-preview__item">
+          <view class="weui-form-preview__label">收款方</view>
+          <view class="weui-form-preview__value">订餐小程序</view>
+        </view>
+      </view>
+      <view class="weui-form-preview__ft">
+        <!-- 绑定 pay 方法 -->
+        <navigator url="" class="weui-form-preview__btn weui-form-preview__btn_primary" hover-class="weui-form-preview__btn_active" bindtap="pay">支付</navigator>
+      </view>
+    </view>
+  </view>
+</view>

@@ -36,7 +36,7 @@ Page({
         // 若请求成功，将返回的数据赋给 orderList
         if(result.data.code === 200){
           this.setData({
-            orderList: result.data.results
+            orderList: result.data.data
           })
         }
       }
