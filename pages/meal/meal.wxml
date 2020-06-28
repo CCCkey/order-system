@@ -1,2 +1,4 @@
 <!--pages/meal/meal.wxml-->
-<text>pages/meal/meal.wxml</text>
+<view class="container">
+  <image style="width: 750rpx; height: 800rpx; background-color: #eeeeee;" mode="scaleToFill" src="/images/no_image.png"></image>
+</view>

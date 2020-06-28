@@ -19,10 +19,12 @@
           <view wx:for="{{item.type_id}}" wx:for-index="typeIndex" wx:for-item="typeItem">
             <!-- 餐品在自身类型下展示 -->
             <block wx:if="{{flag == typeItem}}">
-              <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <!-- 跳转到餐品详情页，传递餐品id -->
+              <view class="weui-media-box weui-media-box_appmsg" bindtap="toOrder" data-mealId="{{item.id}}" hover-class="weui-cell_active">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                  <image class="weui-media-box__thumb" wx:if="{{item.img != null}}" src="{{item.img}}" />
-                  <image class="weui-media-box__thumb" wx:else src="/images/no_image.png" />
+                  <!-- 使图片的宽高完全拉伸至填满 image 元素 -->
+                  <image class="weui-media-box__thumb" mode="scaleToFill" wx:if="{{item.img != null}}" src="{{item.img}}" />
+                  <image class="weui-media-box__thumb" mode="scaleToFill" wx:else src="/images/no_image.png" />
                 </view>
                 <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                   <view class="weui-media-box__title">{{item.name}}</view>
@@ -32,7 +34,8 @@
                   </view>
                   <view class="weui-media-box__desc" style="text-align: right">
                     <!-- 餐品添加到购物车，绑定方法 addCart，传递餐品id -->
-                    <text class="btn_add" bindtap="addCart" data-mealId="{{item.id}}">+</text>
+                    <!-- 这里使用 catchtap 用来阻止冒泡 -->
+                    <text class="btn_add" catchtap="addCart" data-mealId="{{item.id}}">+</text>
                   </view>
                 </view>
               </view>

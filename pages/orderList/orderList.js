@@ -15,7 +15,7 @@ Page({
   // 跳转订单详情页方法，传递订单 id
   clickOrder(e) {
     wx.navigateTo({
-      url: '../order/order?orderId=' + e.currentTarget.dataset.orderId
+      url: '/pages/order/order?orderId=' + e.currentTarget.dataset.orderId
     })
   },
   // 获取订单列表方法

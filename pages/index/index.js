@@ -20,6 +20,12 @@ Page({
       flag: e.currentTarget.dataset.typeid
     })
   },
+  // 跳转餐品详情页，传递餐品id
+  toOrder(e){
+    wx.navigateTo({
+      url: '/pages/meal/meal?orderId=' + e.currentTarget.dataset.meadId,
+    })
+  },
   // 将餐品添加到购物车
   addCart(e){
     // 页面弹出提示框
