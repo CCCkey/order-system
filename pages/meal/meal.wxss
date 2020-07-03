@@ -1,1 +1,26 @@
 /* pages/meal/meal.wxss */
+.title, .sales, .price, .description {
+  width: 750rpx;
+  text-align: left;
+}
+
+.title {
+  font-size: 20px;
+  color: black;
+  font-weight: 900;
+}
+
+.sales {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 10rpx 0;
+}
+
+.price {
+  color: #FF0033;
+  margin-bottom: 10rpx;
+}
+
+.description {
+  font-size: 14px;
+}

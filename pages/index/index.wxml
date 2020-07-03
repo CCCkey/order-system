@@ -32,7 +32,7 @@
                   <view class="weui-media-box__desc" style="text-align: right">
                     <!-- 餐品添加到购物车，绑定方法 addCart，传递餐品id -->
                     <!-- 这里使用 catchtap 用来阻止冒泡 -->
-                    <text class="btn_add" catchtap="addCart" data-mealId="{{item.id}}">+</text>
+                    <image style="width: 50rpx; height: 50rpx;" catchtap="addCart" data-mealId="{{item.id}}" src="/images/add.png"></image>
                   </view>
                 </view>
               </view>

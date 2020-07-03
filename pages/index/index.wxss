@@ -16,7 +16,3 @@
 .price {
   color: #FF0033;
 }
-.btn_add {
-  font-size: 60rpx;
-  color: blue;
-}

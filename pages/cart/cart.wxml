@@ -17,9 +17,9 @@
                 <text style="color: black">{{item.name}}</text>
                 <text class="price">￥{{item.price * item.amount}}</text>
                 <!-- 绑定 doCart 方法，传递参数餐品 id 和操作数量 -->
-                <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{-1}}">-</text>
+                <image style="width: 50rpx; height: 50rpx;" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{-1}}" src="/images/cut.png"></image>
                 <text style="color: black">{{item.amount}}</text>
-                <text class="btn_cart" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{1}}">+</text>
+                <image style="width: 50rpx; height: 50rpx;" bindtap="doCart" data-mealId="{{item.id}}" data-number="{{1}}" src="/images/add.png">+</image>
               </view>
             </view>
           </view>

@@ -1,18 +1,31 @@
 // pages/meal/meal.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    meal: [] 
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.request({
+      url: app.globalData.b_url + '/meals/' + options.mealId,
+      method: 'GET',
+      success: result => {
+        if (result.data.code === 200) {
+          result.data.data.meal.img = app.globalData.img_url + result.data.data.meal.img
+          this.setData({
+            meal: result.data.data.meal
+          })
+        }
+      }
+    })
   },
 
   /**

@@ -1,4 +1,19 @@
 <!--pages/meal/meal.wxml-->
 <view class="container">
-  <image style="width: 750rpx; height: 800rpx; background-color: #eeeeee;" mode="scaleToFill" src="/images/no_image.png"></image>
+  <view class="img">
+    <image style="width: 750rpx; height: 800rpx; background-color: #eeeeee;" mode="scaleToFill" wx:if="{{meal.img != null}}" src="{{meal.img}}"></image>
+    <image style="width: 750rpx; height: 800rpx; background-color: #eeeeee;" mode="scaleToFill" wx:else src="/images/no_image.png"></image>
+  </view>
+  <view class="title">
+    <text>{{meal.name}}</text>
+  </view>
+  <view class="sales">
+    <text>月售{{meal.sales}}</text>
+  </view>
+  <view class="price">
+    <text>￥{{meal.price}}</text>
+  </view>
+  <view class="description">
+    <text>{{meal.description}}</text>
+  </view>
 </view>

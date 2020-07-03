@@ -23,7 +23,7 @@ Page({
   // 跳转餐品详情页，传递餐品id
   toOrder(e){
     wx.navigateTo({
-      url: '/pages/meal/meal?orderId=' + e.currentTarget.dataset.meadId,
+      url: '/pages/meal/meal?mealId=' + e.currentTarget.dataset.mealid
     })
   },
   // 将餐品添加到购物车
@@ -98,6 +98,7 @@ Page({
           // 解析类型id
           for(let item of result.data.data.meals) {  
             item.type_id = item.type_id.split(',');
+            item.img = app.globalData.img_url + item.img
           };
           // 初始化数据
           this.setData({

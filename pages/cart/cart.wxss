@@ -2,9 +2,8 @@
 .price {
   color: #FF0033;
 }
-.btn_cart {
-  font-size: 60rpx;
-  color: blue;
+.weui-media-box__thumb {
+  margin-left: 20rpx;
 }
 .weui-media-box_appmsg {
   width: 750rpx;

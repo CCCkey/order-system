@@ -30,6 +30,7 @@ App({
   },
   globalData: {
     // 后端服务器地址
-    b_url: 'http://localhost:9090/api/v1'
+    b_url: 'http://localhost:9090/api/v1',
+    img_url: 'http://localhost:9090'
   }
 })
